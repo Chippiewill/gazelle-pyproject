@@ -1,0 +1,10 @@
+[project]
+name = "hello-world"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "libworld>=0.1.0",
+    "libhello>=0.1.0",
+]

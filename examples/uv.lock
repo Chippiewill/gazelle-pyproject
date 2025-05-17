@@ -1,0 +1,71 @@
+version = 1
+revision = 2
+requires-python = ">=3.13"
+
+[manifest]
+members = [
+    "examples",
+    "hello-world",
+    "libhello",
+    "libworld",
+]
+
+[[package]]
+name = "art"
+version = "6.5"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/d4/7d/7d80509bbd19fb747edef94ba487dbadd2747944774ccc0528ad0d005a36/art-6.5.tar.gz", hash = "sha256:a98d77b42c278697ec6cf4b5bdcdfd997f6b2425332da078d4e31e31377d1844", size = 672902, upload-time = "2025-04-12T17:02:20.279Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/67/29/57b06fdb3abdf52c621d3ca3caea735e2db4c8d48288ebd26af448e8e247/art-6.5-py3-none-any.whl", hash = "sha256:70706408144c45c666caab690627d5c74aea7b6c7ce8cc968408ddeef8d84afd", size = 610382, upload-time = "2025-04-12T17:02:21.97Z" },
+]
+
+[[package]]
+name = "colored"
+version = "2.3.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/b0/01/04aa2e928233863ddf91b35d8f9c0ae40714394afac01fa76ba4eb2f0182/colored-2.3.0.tar.gz", hash = "sha256:4daf9b3ed687a01d59005e1bd03f354475226b933abb9a01836d6dde926d4c6f", size = 14708, upload-time = "2025-02-10T16:42:42.293Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/71/52/990d8b2a888be9fe1022eb89884849547e6341a8bec0072605fd70483db8/colored-2.3.0-py3-none-any.whl", hash = "sha256:2f7f455dc2ed490531b0b8e0ecf8f8513bb28a150d9f12f0e48b023641a55185", size = 18333, upload-time = "2025-02-10T16:42:39.269Z" },
+]
+
+[[package]]
+name = "examples"
+version = "0.1.0"
+source = { virtual = "." }
+
+[[package]]
+name = "hello-world"
+version = "0.1.0"
+source = { virtual = "hello_world" }
+dependencies = [
+    { name = "libhello" },
+    { name = "libworld" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "libhello", editable = "libhello" },
+    { name = "libworld", editable = "libworld" },
+]
+
+[[package]]
+name = "libhello"
+version = "0.1.0"
+source = { editable = "libhello" }
+dependencies = [
+    { name = "art" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "art", specifier = ">=6.5" }]
+
+[[package]]
+name = "libworld"
+version = "0.1.0"
+source = { editable = "libworld" }
+dependencies = [
+    { name = "colored" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "colored", specifier = ">=2.3.0" }]

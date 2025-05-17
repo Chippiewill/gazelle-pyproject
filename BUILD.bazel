@@ -1,0 +1,11 @@
+load("@gazelle//:def.bzl", "gazelle")
+
+# gazelle:prefix github.com/Chippiewill/gazelle_pyproject
+gazelle(
+    name = "gazelle",
+)
+
+gazelle(
+    name = "gazelle_py",
+    gazelle = "//gazelle_pyproject:gazelle",
+)

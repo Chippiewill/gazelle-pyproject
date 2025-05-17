@@ -1,0 +1,14 @@
+[project]
+name = "examples"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = []
+
+[tool.uv.workspace]
+members = ["libhello", "libworld", "hello_world"]
+
+[tool.uv.sources.libhello]
+workspace = true
+
+[tool.uv.sources.libworld]
+workspace = true
