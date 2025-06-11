@@ -1,3 +1,9 @@
 load("@rules_python//python:defs.bzl", "py_library")
 
-py_library(name = "libhello")
+py_library(
+    name = "libhello",
+    srcs = ["src/libhello/__init__.py"],
+    imports = ["src"],
+    visibility = ["//visibility:public"],
+    deps = ["@pypi//art"],
+)
