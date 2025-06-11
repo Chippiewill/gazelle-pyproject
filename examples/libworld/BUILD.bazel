@@ -1,0 +1,9 @@
+load("@rules_python//python:defs.bzl", "py_library")
+
+py_library(
+    name = "libworld",
+    srcs = ["src/libworld/__init__.py"],
+    imports = ["src"],
+    visibility = ["//visibility:public"],
+    deps = ["@pypi//colored"],
+)

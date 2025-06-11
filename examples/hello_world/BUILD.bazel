@@ -1,0 +1,13 @@
+load("@rules_python//python:defs.bzl", "py_binary")
+
+py_binary(
+    name = "hello_world",
+    srcs = ["main.py"],
+    main = "main.py",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//examples/libhello",
+        "//examples/libworld",
+        "@pypi//requests",
+    ],
+)

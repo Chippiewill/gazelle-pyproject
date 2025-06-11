@@ -1,0 +1,14 @@
+[project]
+name = "libhello"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [{ name = "Will Gardner", email = "will@cogna.co" }]
+requires-python = ">=3.13"
+dependencies = [
+    "art>=6.5",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
